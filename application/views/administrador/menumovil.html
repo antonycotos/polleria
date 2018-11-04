@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <link href="<?=base_url()?>resources/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>resources/css/estiloejemplo.css">
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>resources/css/bootstrap-table.css">
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>resources/css/bootstrap-select.min.css">
+  <script src="<?=base_url()?>resources/js/jquery-3.1.0.js"></script>
+  <script src="<?=base_url()?>resources/js/bootstrap-select.min.js"></script>
+  <script src="<?=base_url()?>resources/js/bootstrap-table.js"></script>
+  <script src="<?=base_url()?>resources/js/bootstrap.min.js"></script>  
+  <script type="text/javascript" src="<?=base_url()?>resources/js/scripts.js"></script>
+  <script src="<?=base_url()?>resources/js/typeahead.js"></script> 
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top menuprincipal">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?=base_url()?>Portada">FRUTTI KRISTEN</a>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="<?=base_url()?>Login/logout"><span class="glyphicon glyphicon-log-out small"></span> SALIR</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+  <nav class="navbar navbar-inverse navbar-fixed-top menumovil">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menumovil" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?=base_url()?>Portada">FRUTTI KRISTEN</a>
+      </div>
+
+      <div id="menumovil" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="<?=base_url()?>Portada"><span class="glyphicon glyphicon-home"></span> INICIO</a></li>
+          <li><a href="<?=base_url()?>Reportes"><span class="glyphicon glyphicon-list-alt"></span> REPORTES</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-chevron-down"></span> REGISTROS <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="<?=base_url()?>RegAlbergues"><span class="glyphicon glyphicon-plus"></span> Trabajador</a></li>
+              <li><a href="<?=base_url()?>RegGrupos"><span class="glyphicon glyphicon-plus"></span> Productos</a></li>
+              <li><a href="<?=base_url()?>RegEncargados"><span class="glyphicon glyphicon-plus"></span> Categorias</a></li>  
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-chevron-down"></span> VER INFORMACION <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="<?=base_url()?>trabajador"><span class="glyphicon glyphicon-plus"></span> Trabajador</a></li>
+              <li><a href="<?=base_url()?>Grupos"><span class="glyphicon glyphicon-plus"></span> Productos</a></li>
+              <li><a href="<?=base_url()?>Encargados"><span class="glyphicon glyphicon-plus"></span> Categorias</a></li>  
+            </ul>
+          </li>
+          <li><a href="<?=base_url()?>Login/logout"><span class="glyphicon glyphicon-log-out small"></span> SALIR</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+</header>
+<span class="text-center btnnext glyphicon glyphicon-triangle-top" id="btnnext"></span>
