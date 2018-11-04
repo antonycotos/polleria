@@ -40,16 +40,16 @@
 
 			$this ->form_validation->set_rules('idtipodocut', 'Id tipo Documento','required|is_natural_no_zero');
 
-			$this ->form_validation->set_rules('nombrest','Nombre de trabajor','required|min_length[1]|max_length[120]|callback_validarNombre', array ('validarNombre'=> 'El nombre ingresado es incorrecto.'));
+			$this ->form_validation->set_rules('nombrest','Nombre de trabajor','required|min_length[2]|max_length[120]|callback_validarNombre', array ('validarNombre'=> 'El nombre ingresado es incorrecto.'));
 
 			$this ->form_validation->set_rules('apellidost', 'Apellido de trabajor','required|min_length[1]|max_length[120]|callback_validarNombre', array ('validarNombre'=> 'El nombre ingresado es incorrecto.'));
 
 			//CAMPO NO OBLIGATORIO
 			$this ->form_validation->set_rules('telefonot', 'Telefono de trabajor','min_length[6]|max_length[13]is_natural');
 
-			$this ->form_validation->set_rules('direcciont', 'Direccion de trabajador','required|min_length[3]|max_length[120]');
+			$this ->form_validation->set_rules('direcciont', 'Direccion de trabajador','required|min_length[7]|max_length[150]');
 
-			$this ->form_validation->set_rules('correoelectronicot', 'Correo electronico de trabajador','required|callback_is_valid_email',array('is_valid_email'=> 'El correo ingresado es incorrecto.'));
+			$this ->form_validation->set_rules('correoelectronicot', 'Correo electronico de trabajador','required|min_length[15]|max_length[150]|callback_is_valid_email',array('is_valid_email'=> 'El correo ingresado es incorrecto.'));
 
 			$this ->form_validation->set_rules('fechanacimientot', 'Fecha nacimiento de trabajador','callback_valid_date',array('valid_date' => 'fecha no tiene caracteres validos'));
 
@@ -132,12 +132,10 @@ function is_valid_email($str)
 function valida_dni($str){
    $permitidos = "0123456789"; 
    for ($i=0; $i<strlen($nombre_usuario); $i++){ 
-      if (strpos($permitidos, substr($nombre_usuario,$i,1))===false){ 
-         echo $nombre_usuario . " no es válido<br>"; 
+      if (strpos($permitidos, substr($nombre_usuario,$i,1))===false){  
          return false; 
       } 
    } 
-   echo $nombre_usuario . " es válido<br>"; 
    return true; 
 
 }
