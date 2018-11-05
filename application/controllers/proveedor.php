@@ -17,12 +17,13 @@
 
 			//FALTA CREAR LA VISTA LOCALL
 			$dat['tipo'] = $this->MProveedor->combotipo();
+			
 			$this->load->view('VProveedor',$dat);
 
 		}
 		public function doreg()
 		{
-			$respuesta = array();
+			$respuesta = array(); 
 			$respuesta ['error']="";
 
 			$this->form_validation->set_message('required', '%s no debe ser vacio.');

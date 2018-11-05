@@ -3,7 +3,7 @@ function doaccion() {
 	$("#werror").hide();
 
 	$("#frmreg").submit(
-		function(){
+		function(){ 
 			$.ajax({
 				url: ruta+'trabajador/doreg',
 				type: 'POST',
@@ -21,7 +21,6 @@ function doaccion() {
 						$("#wok").hide();
 						$("#werror").show();
 						$("#merror").html(e.error);
-
 							alert(e.error);
 
 					}

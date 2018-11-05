@@ -14,7 +14,7 @@ class MProveedor extends CI_Model {
 		$this->db->trans_start();
 		$this->db->query("call sp_registrarproveedor(?,?,?,?,?,?,?,?,@s)",$d);
 		$r=$this->db->query("select @s as v");
-		$this->db->trans_complete();
+		$this->db->trans_complete(); 
 		$this->db->close();	
 		return $r->row()->v;
 
