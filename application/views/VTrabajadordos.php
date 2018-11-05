@@ -85,7 +85,7 @@
       </div>  
       <div class ="col-md-12">
       <label for = "documento">*Documento Identidad</label>
-      <input type="number" class ="form-control" id= "documento" placeholder="Ingresar Numero de Documento" required name="documento"> 
+      <input type="text" class ="form-control" id= "documento" placeholder="Ingresar Numero de Documento" required name="documento"> 
     </div>           
 
     <div class ="col-md-12">
@@ -114,10 +114,19 @@
     </div>
 
     <div class ="col-md-12">
-      <label for = "fechanacimientot">*fecha de nacimiento</label>
+      <label for = "fechanacimientot">*Fecha de Nacimiento</label>
       <input type="date" class ="form-control" id= "fechanacimientot" placeholder="Ingresar Aforo" required name="fechanacimientot"> 
     </div>
 
+    <div class ="col-md-12">
+      <label for = "usuario">*Usuario</label>
+      <input type="text" class ="form-control" id= "usuario" placeholder="Ingrese Usuario" required name="usuario"> 
+    </div>
+
+    <div class ="col-md-12">
+      <label for = "clave">*Clave</label>
+      <input type="password" class ="form-control" id= "clave" placeholder="Ingrese Clave" required name="clave"> 
+    </div>
     
         <div class ="col-md-12">
       <label></label>

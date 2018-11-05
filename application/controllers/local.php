@@ -32,7 +32,7 @@
 			//VALIDACIONES
 			$this ->form_validation->set_rules('nombrel','Nombre del local','required|min_length[5]|max_length[100]|callback_validarNombre',array('validarNombre' => 'Nombre no tiene caracteres validos'));
 
-			$this ->form_validation->set_rules('telefonol','Ingrese el telefono','required|exact_length[9]|is_natural');
+			$this ->form_validation->set_rules('telefonol','Ingrese el telefono','required|exact_length[9]|is_natural|callback_validatelefono',array('validatelefono' => 'El telefono no debe tener valores negativos'));
 
 			$this ->form_validation->set_rules('direccionl','ingrese la direccion','required|min_length[7]|max_length[150]');
 
@@ -64,7 +64,7 @@
                 }
 			header('Content-Type: application/x-json; charset=utf-8');
                 echo(json_encode($respuesta));
-
+ 
 		}
 
 		public function dolist(){
@@ -94,6 +94,13 @@
   		}
   		return true;
   	}
+    function validatelefono($str){
+      if($str<0){
+        return false;
+      }
+      return true;
+    }
 	}
+
 
  ?>

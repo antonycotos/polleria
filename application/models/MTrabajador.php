@@ -19,6 +19,20 @@ class MTrabajador extends CI_Model {
 		return $r->row()->v;
 
 	}
+			public function registra($data)
+	{
+		$res;
+		$this->load->database();
+		$this->db->trans_start();
+		$consulta="call sp_registrartrabajador(?,?,?,?,?,?,?,?,?,?,?,@v_res,@v_mensaje)";
+		$this->db->query($consulta,$data);		
+		$res=$this->db->query("select @v_res as respuesta, @v_mensaje as mensaje");
+		$datos = ['respuesta' => $res->row()->respuesta, 'mensaje' => $res->row()->mensaje];
+		$this->db->trans_complete();
+		$this->db->close();
+		return  $datos;
+
+	}
 	public function listar() 
 	{
 		$this->load->database();   
@@ -55,7 +69,7 @@ class MTrabajador extends CI_Model {
 	foreach ($coll as $value) {
 		$combo [$value['v1']]=$value['v2'];
 	}
-	return $combo;
+	return $combo; 
 }
 }
 
