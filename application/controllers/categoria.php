@@ -26,9 +26,9 @@
         	$this->form_validation->set_message('max_length', '%s excede el numero de caracteres.');
          	$this->form_validation->set_message('numeric', '%s Debe contener solo numeros');
 
-			$this->form_validation->set_rules('nombrec', 'Nombre de categoria', 'required|min_length[3]|max_length[100]|callback_validarNombre',array('validarNombre'=> 'Nombre no tiene caracteres validos'));
+			$this->form_validation->set_rules('nombrec', 'Nombre de categoria', 'required|min_length[3]|max_length[30]|callback_validarNombre',array('validarNombre'=> 'Nombre no tiene caracteres validos'));
 
-			$this->form_validation->set_rules('descripcionc', 'descripcion de categoria', 'required|min_length[3]|max_length[30]|callback_validarNombre',array('validarNombre'=> 'La descripcion no tiene caracteres validos'));
+			$this->form_validation->set_rules('descripcionc', 'descripcion de categoria', 'required|min_length[10]|max_length[200]');
 
 			if ($this->form_validation->run()==false) {
 
