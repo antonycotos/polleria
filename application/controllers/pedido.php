@@ -29,9 +29,18 @@
         	$this->form_validation->set_message('numeric', '%s Debe contener solo numeros');
 
         	$this ->form_validation->set_rules('idtrabajador', 'Id tipo trabajador', 'required|is_natural_no_zero');
+
         	$this ->form_validation->set_rules('cantidad', 'Ingrese cantidad de pedido', 'is_natural');
-        	$this ->form_validation->set_rules('estado', '', '');
-        	$this ->form_validation->set_rules('fecha', '', '');
+        	
+        	$this ->form_validation->set_rules('subto', 'ingrese subtotal del pedido', '');
+        	
+        	$this ->form_validation->set_rules('igv', 'Ingrese IGV del pedido', '');
+
+        	$this ->form_validation->set_rules('tot', 'Ingrese el total del pedido', '');
+
+        	$this ->form_validation->set_rules('est', 'Ingrese el estado del pedido', '');
+
+        	$this ->form_validation->set_rules('fecha', 'Ingrese la fecha del pedido', '');
 
         	if ($this->form_validation->run()==false) {
 

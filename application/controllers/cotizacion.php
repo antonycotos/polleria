@@ -34,17 +34,17 @@
         	$this->form_validation->set_message('is_natural', '%s Debe contener numero natural');
 
 			//VALIDACIONES
-			$this ->form_validation->set_rules('iddetallepedio','Ingresar id pedido','required|is_natural_no_zero');
+			$this ->form_validation->set_rules('iddetallepedio','Ingresar detalle de pedido','required|is_natural_no_zero');
 
-			$this ->form_validation->set_rules('idproveedor','','required|is_natural_no_zero');
+			$this ->form_validation->set_rules('idproveedor','ingrese proveedor','required|is_natural_no_zero');
 
-			$this ->form_validation->set_rules('fecha','','');
-
-			//CAMPO NO OBLIGATORIO
-			$this ->form_validation->set_rules('correoelectronicol','ingrese correo electronico','min_length[3]|max_length[100]');
+			$this ->form_validation->set_rules('fechanacimientot', 'Fecha nacimiento de trabajador','required|callback_valid_date',array('valid_date' => 'fecha no tiene caracteres validos'));
 
 			//CAMPO NO OBLIGATORIO
-			$this ->form_validation->set_rules('aforo','capacidad a foro','min_length[2]|max_length[3]|is_natural');
+			$this ->form_validation->set_rules('precio','ingrese precio','min_length[3]|max_length[100]');
+
+			//CAMPO NO OBLIGATORIO
+			$this ->form_validation->set_rules('estado','ingrese estado','min_length[2]|max_length[3]|is_natural');
 
 			if ($this->form_validation->run()==false) {
 
@@ -70,6 +70,28 @@
       }
       return false;
   }
+
+  function valid_date( $str )
+{
+    $stamp = strtotime( $str );
+      
+    if (!is_numeric($stamp)) 
+    { 
+        return FALSE;
+    } 
+      
+     $month = date( 'm', $stamp );
+     $day   = date( 'd', $stamp );
+     $year  = date( 'Y', $stamp );
+      
+     if (checkdate($month, $day, $year)) 
+     {
+        return $year.'-'.$month.'-'.$day;
+     }
+      
+
+     return FALSE;
+}
 	}
 
  ?>

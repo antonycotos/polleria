@@ -33,7 +33,7 @@
 
 			$this->form_validation->set_rules('idcategoriap', 'Ingresar id categoria', 'required|is_natural_no_zero');
 
-			$this->form_validation->set_rules('nombrep', 'Ingrese nombre de producto','callback_validarNombre',  'required|min_length[3]|max_length[100]|callback_validarNombre',array('validarNombre'=> 'El nombre ingresado es incorrecto.'));
+			$this->form_validation->set_rules('nombrep', 'Ingrese nombre de producto','callback_validarNombre',  'required|min_length[2]|max_length[120]|callback_validarNombre',array('validarNombre'=> 'El nombre ingresado es incorrecto.'));
 
 			$this->form_validation->set_rules('precio', 'Ingrese precio de producto', 'required|callback_validarnumerodecimalpositivo',array('validarnumerodecimalpositivo'=> 'El valor ingresado es incorrecto.'));
 
@@ -80,9 +80,6 @@
     
 
 	}
-
-
-
 
 
 ?>
