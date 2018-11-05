@@ -8,8 +8,6 @@
 
 <link rel="stylesheet" href="<?= base_url()?>res/css/bootstrap-table.min.css">
 
-
-
 <script src="<?= base_url()?>res/js/jquery-3.3.1.min.js"></script>
 <script src="<?= base_url()?>res/js/popper.min.js""></script>
 <script src="<?= base_url()?>res/js/bootstrap.min.js"></script>

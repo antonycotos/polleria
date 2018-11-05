@@ -53,17 +53,26 @@
 
 			$this ->form_validation->set_rules('direccionprov','ingrese la direccion del proveedor','min_length[17]|max_length[150]|callback_validarNombre',array('validarNombre' => 'direccion de proveedor no tiene caracteres validos'));
 
-			if ($this->form_validation->run()==false) {
+			if ($this->form_validation->run() == FALSE)
+                {
+                	//error 
+                   $respuesta['error'] = validation_errors();
+     
+                }
+                else
+                {
+                	//acierto
+               $d=array($this->input->post("idtipoproveedorp"),$this->input->post("nombresprov"),$this->input->post("apellidoprov"),$this->input->post("telefonoprov"),$this->input->post("correoelectronicol"),$this->input->post("ruc"),$this->input->post("razonsocial"),$this->input->post("direccionprov"));
 
-				//error
-				$respuesta['error']=validation_errors();
-			}
-			else
-			{
-				$respuesta['ok']="Validacion Correcta";
-
-
-			}
+                	$ejecuta =$this->MProveedor->registra($d);                	
+                	if($ejecuta['respuesta'] ==1){
+              		  $respuesta['ok'] = $ejecuta['mensaje'];              
+            }
+            else{
+              $respuesta['error'] = $ejecuta['mensaje'];
+            }
+                   
+                }
 			header('Content-Type: application/x-json; charset=utf-8');
                 echo(json_encode($respuesta));
 

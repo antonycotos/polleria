@@ -42,7 +42,7 @@
 
 			$this ->form_validation->set_rules('nombrest','Nombre de trabajor','required|min_length[2]|max_length[120]|callback_validarNombre', array ('validarNombre'=> 'El nombre ingresado es incorrecto.'));
 
-			$this ->form_validation->set_rules('apellidost', 'Apellido de trabajor','required|min_length[2]|max_length[120]|callback_validarNombre', array ('validarNombre'=> 'El nombre ingresado es incorrecto.'));
+			$this ->form_validation->set_rules('apellidost', 'Apellido de trabajor','required|min_length[2]|max_length[120]|callback_validarNombre', array ('validarNombre'=> 'El apellido ingresado es incorrecto.'));
 
 			//CAMPO NO OBLIGATORIO
 			$this ->form_validation->set_rules('telefonot', 'Telefono de trabajor','required|min_length[9]|max_length[13]is_natural|callback_validatelefono',array('validatelefono' => 'El telefono no debe tener valores negativos'));

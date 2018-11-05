@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+idtipoproveedorp<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -56,44 +56,45 @@ $(document).ready(function(){
     
           <div class ="col-md-12">
      <div class="form-group">    
-                      <label for="tipro">* Tipo Proveedor:</label>
+                      <label for="idtipoproveedorp">* Tipo Proveedor:</label>
                       <?php 
-                        echo form_dropdown('tipro', $tipo, '', 'class="form-control selectpicker" id="tipro" required '); ?>       
+                        echo form_dropdown('idtipoproveedorp', $tipo, '', 'class="form-control selectpicker" id="idtipoproveedorp" required '); ?>       
                    </div> 
       </div>  
 
     <div class ="col-md-12" id="dnombre">
-      <label for = "nompro">*Nombre del proveedor</label>
-      <input type="text" class ="form-control" id= "nompro" placeholder="Ingresar Nombre" required name="nompro"> 
+      <label for = "nombresprov">*Nombre del proveedor</label>
+      <input type="text" class ="form-control" id= "nombresprov" placeholder="Ingresar Nombre" required name="nombresprov"> 
     </div>
 
     <div class ="col-md-12" id="dapellidos">
-      <label for = "apepro">*Apellidos del proveedor</label>
-      <input type="text" class ="form-control" id= "apepro" placeholder="Ingresar Apellido" required name="apepro"> 
+      <label for = "apellidoprov">*Apellidos del proveedor</label>
+      <input type="text" class ="form-control" id= "apellidoprov" placeholder="Ingresar Apellido" required name="apellidoprov"> 
     </div>
+
+    <div class ="col-md-12">
+      <label for = "telefonoprov">*Telefono</label>
+      <input type="number" class ="form-control" id= "telefonoprov" placeholder="Ingresar Telefono" required name="telefonoprov"> 
+    </div>
+
+    <div class ="col-md-12">
+      <label for = "correoelectronicol">*Correo Eletronico</label>
+      <input type="email" class ="form-control" id= "correoelectronicol" placeholder="Ingresar Correo" required name="correoelectronicol"> 
+    </div>
+
      <div class ="col-md-12" id="druc">
       <label for = "ruc" id="lruc">*Ruc</label>
       <input type="number" class ="form-control" id= "ruc" placeholder="Ingresar Ruc" required name="ruc"> 
     </div>
 
     <div class ="col-md-12" id="drz">
-      <label for = "Razonsocial" id="lrz">*Razonsocial</label>
-      <input type="text" class ="form-control" id= "Razonsocial" placeholder="Ingresar Nombre" required name="Razonsocial"> 
+      <label for = "razonsocial" id="lrz">*Razonsocial</label>
+      <input type="text" class ="form-control" id= "razonsocial" placeholder="Ingresar Nombre" required name="razonsocial"> 
     </div>
 
     <div class ="col-md-12">
-      <label for = "telet">*Telefono</label>
-      <input type="number" class ="form-control" id= "telet" placeholder="Ingresar Telefono" required name="telet"> 
-    </div>
-
-    <div class ="col-md-12">
-      <label for = "correot">*Correo Eletronico</label>
-      <input type="email" class ="form-control" id= "correot" placeholder="Ingresar Correo" required name="correot"> 
-    </div>
-
-    <div class ="col-md-12">
-      <label for = "dirt">*Direccion</label>
-      <input type="text" class ="form-control" id= "dirt" placeholder="Ingresar Direccion" required name="dirt"> 
+      <label for = "direccionprov">*Direccion</label>
+      <input type="text" class ="form-control" id= "direccionprov" placeholder="Ingresar Direccion" required name="direccionprov"> 
     </div>
 
     <div class ="col-md-12">
