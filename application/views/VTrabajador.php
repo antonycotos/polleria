@@ -128,9 +128,9 @@
 
 <div class="card col-md-8">
   <div class="card-body">
-    <h5 class="card-title">LISTADOS</h5>
+    <h5 class="card-title">LISTADOS</h5> 
     <button class="btn btn-primary btn-lg btn-block" id="brMostrar">Mostrar</button>
-    <table id="table"  class="table table-striped"
+    <table id="tablel"  class="table table-striped"
     data-click-to-select="true"
     data-detail-formatter="detailFormatter" 
     data-sort-name="v9"
