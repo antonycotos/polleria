@@ -19,6 +19,7 @@ class MTrabajador extends CI_Model {
 		return $r->row()->v;
 
 	}
+	
 			public function registra($data)
 	{
 		$res;

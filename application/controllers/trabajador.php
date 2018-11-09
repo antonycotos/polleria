@@ -86,6 +86,7 @@
 			header('Content-Type: application/x-json; charset=utf-8');
                 echo(json_encode($respuesta));
 		}
+    
 
 		public function dolist(){
         $respuesta = array();

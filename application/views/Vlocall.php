@@ -111,18 +111,18 @@
     <table id="table"  class="table table-striped"
     data-click-to-select="true"
     data-detail-formatter="detailFormatter" 
-    data-sort-name="v5"
+    data-sort-name="v6"
     data-sort-order="desc" 
     data-show-toggle="true" 
     data-show-columns="true"                     
                                 >
             <thead>
             <tr>
-          <th data-filed ="v2">Nombre</th>
-          <th data-filed ="v3">Telefono</th>
-          <th data-filed ="v4">Direccion</th>
-          <th data-filed ="v5">Correo Electronico</th>
-          <th data-filed ="v6">Aforo</th>
+                <th data-field="v2">Nombre</th>
+                <th data-field="v3">Telefono</th>
+                <th data-field="v4">Direccion</th>
+                <th data-field="v5">Correo Electronico</th>
+                <th data-field="v6">Aforo</th>
             </tr>
             </thead>
         </table>

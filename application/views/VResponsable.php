@@ -16,7 +16,7 @@
 
 <script src="<?= base_url()?>res/js/bootstrap-table.min.js"></script>
 
-<script src="<?= base_url()?>res/js/jslocal.js"></script>
+<script src="<?= base_url()?>res/js/jsresponsable.js"></script>
 
   <title></title>
 </head>
@@ -70,23 +70,27 @@
      <?= form_open('#', array('id' => 'frmreg','name' => 'frmreg')) ?>
 
      <div class ="col-md-12">
-      <label for = "nombrel">*Tipo de trabajador</label>
-      <input type="number" class ="form-control" id= "nombrel" placeholder="Ingresar Nombre" required name="nombrel"> 
+      <label for = "idtrab">*Tipo de trabajador</label>
+      <input type="number" class ="form-control" id= "idtrab" placeholder="Ingresar Nombre" required name="idtrab"> 
     </div>
 
     <div class ="col-md-12">
-      <label for = "telefonol">*Tipo de local</label>
-      <input type="number" class ="form-control" id= "telefonol" placeholder="Ingresar Telefono" required name="telefonol"> 
+      <label for = "idloc">*Tipo de local</label>
+      <input type="number" class ="form-control" id= "idloc" placeholder="Ingresar Telefono" required name="idloc"> 
     </div>
 
     <div class ="col-md-12">
-      <label for = "direccionl">*Fecha de inicio</label>
-      <input type="date" class ="form-control" id= "direccionl" placeholder="Ingresar Direccion" required name="direccionl"> 
+      <label for = "fecini">*Fecha de inicio</label>
+      <input type="date" class ="form-control" id= "fecini" placeholder="Ingresar Direccion" required name="fecini"> 
     </div>
 
     <div class ="col-md-12">
-      <label for = "correoelectronicol">*Fecha de fin</label>
-      <input type="date" class ="form-control" id= "correoelectronicol" placeholder="Ingresar Correo" required name="correoelectronicol"> 
+      <label for = "fecfin">*Fecha de fin</label>
+      <input type="date" class ="form-control" id= "fecfin" placeholder="Ingresar Correo" required name="fecfin"> 
+    </div>
+
+    <div class ="col-md-12">
+      <label></label>
     </div>
 
      <button class="btn btn-primary btn-lg btn-block" type="submit" id="brgrabar">Registrar</button>

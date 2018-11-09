@@ -5,7 +5,7 @@ function doaccion() {
 	$("#frmreg").submit(
 		function(){
 			$.ajax({
-				url: ruta+'local/doreg',
+				url: ruta+'responsable/doreg',
 				type: 'POST', 
 				dataType: 'json',
 				data: $('#frmreg').serialize(),
@@ -52,13 +52,13 @@ $("#brMostrar").click(function() {
 		type: 'POST',
 		dataType: 'json',
 		data: {},
-		success:function(e){
+		success: function(e){
 			if(e.datos.length>0){
-				alert(e.datos.length);
-				$('#table').bootstrapTable({
+				//alert(e.datos.length);
+			$('#table').bootstrapTable({
+				data: e.datos
+			});
 
-					data: e.datos
-				});
 			}
 		}
 	})

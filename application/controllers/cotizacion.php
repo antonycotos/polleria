@@ -18,7 +18,7 @@
 		{
 
 			//FALTA CREAR LA VISTA LOCALL
-			$this->load->view('Vistacotizacion');
+			$this->load->view('VCotizacion');
 
 		}
 		public function doreg()
