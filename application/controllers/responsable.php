@@ -15,6 +15,8 @@
 			$this->load->helper('url');
 			$this->load->helper('form');
 			$this->load->library('form_validation');
+			$this->load->model("MResponsable");
+
 		}
 		public function index(){
 
@@ -42,19 +44,29 @@
 
 			$this ->form_validation->set_rules('fecfin', 'Fecha fin','callback_valid_date',array('valid_date' => 'fecha no tiene caracteres validos'));
 
-			if ($this->form_validation->run()==false) {
+			if ($this->form_validation->run() == FALSE)
+                {
+                	//error 
+                   $respuesta['error'] = validation_errors();
+     
+                }
+                else
+                {
+                	//acierto
+               $d=array($this->input->post("idtrab"),$this->input->post("idloc"),$this->input->post("fecini"),$this->input->post("fecfin"));
 
-				//error
-				$respuesta['error']=validation_errors();
-			}
-			else
-			{
-				$respuesta['ok']="Validacion Correcta";
-
-
-			}
+                	$ejecuta =$this->MResponsable->registrar($d);                	
+                	if($ejecuta['respuesta'] ==1){
+              		  $respuesta['ok'] = $ejecuta['mensaje'];              
+            }
+            else{
+              $respuesta['error'] = $ejecuta['mensaje'];
+            }
+                   
+                }
 			header('Content-Type: application/x-json; charset=utf-8');
                 echo(json_encode($respuesta));
+ 
 		}
 
 

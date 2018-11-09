@@ -8,8 +8,6 @@
 
 <link rel="stylesheet" href="<?= base_url()?>res/css/bootstrap-table.min.css">
 
- 
-
 <script src="<?= base_url()?>res/js/jquery-3.3.1.min.js"></script>
 <script src="<?= base_url()?>res/js/popper.min.js""></script>
 <script src="<?= base_url()?>res/js/bootstrap.min.js"></script>
@@ -140,14 +138,14 @@
                                 >
             <thead>
             <tr>
-          <th data-filed ="v2">Tipo de trabajador</th>
-          <th data-filed ="v3">Tipo de documento</th>
-          <th data-filed ="v4">Apellido</th>
-          <th data-filed ="v5">Telefono</th>
-          <th data-filed ="v6">Direccion</th>
-          <th data-filed ="v7">Correo Eletronico</th>
-          <th data-filed ="v8">fecha de nacimiento</th>
-          <th data-filed ="v9">Documento Identidad</th>
+          <th data-field ="v2">Tipo de trabajador</th>
+          <th data-field ="v3">Tipo de documento</th>
+          <th data-field ="v4">Apellido</th>
+          <th data-field ="v5">Telefono</th>
+          <th data-field ="v6">Direccion</th>
+          <th data-field ="v7">Correo Eletronico</th>
+          <th data-field ="v8">fecha de nacimiento</th>
+          <th data-field ="v9">Documento Identidad</th>
             </tr>
             </thead>
         </table>
