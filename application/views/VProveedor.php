@@ -62,14 +62,24 @@ $(document).ready(function(){
                    </div> 
       </div>  
 
-    <div class ="col-md-12" id="dnombre">
+    <div class ="col-md-12" id="nombresprov">
       <label for = "nombresprov">*Nombre del proveedor</label>
       <input type="text" class ="form-control" id= "nombresprov" placeholder="Ingresar Nombre" required name="nombresprov"> 
     </div>
-
-    <div class ="col-md-12" id="dapellidos">
+ 
+    <div class ="col-md-12" id="apellidoprov">
       <label for = "apellidoprov">*Apellidos del proveedor</label>
       <input type="text" class ="form-control" id= "apellidoprov" placeholder="Ingresar Apellido" required name="apellidoprov"> 
+    </div>
+
+    <div class ="col-md-12" id="ruc">
+      <label for = "ruc" id="lruc">*Ruc</label>
+      <input type="number" class ="form-control" id= "ruc" placeholder="Ingresar Ruc" required name="ruc"> 
+    </div>
+
+    <div class ="col-md-12" id="razonsocial">
+      <label for = "razonsocial" id="lrz">*Razonsocial</label>
+      <input type="text" class ="form-control" id= "razonsocial" placeholder="Ingresar Nombre" required name="razonsocial"> 
     </div>
 
     <div class ="col-md-12">
@@ -82,15 +92,7 @@ $(document).ready(function(){
       <input type="email" class ="form-control" id= "correoelectronicol" placeholder="Ingresar Correo" required name="correoelectronicol"> 
     </div>
 
-     <div class ="col-md-12" id="druc">
-      <label for = "ruc" id="lruc">*Ruc</label>
-      <input type="number" class ="form-control" id= "ruc" placeholder="Ingresar Ruc" required name="ruc"> 
-    </div>
-
-    <div class ="col-md-12" id="drz">
-      <label for = "razonsocial" id="lrz">*Razonsocial</label>
-      <input type="text" class ="form-control" id= "razonsocial" placeholder="Ingresar Nombre" required name="razonsocial"> 
-    </div>
+     
 
     <div class ="col-md-12">
       <label for = "direccionprov">*Direccion</label>

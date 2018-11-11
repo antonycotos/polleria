@@ -16,7 +16,7 @@
 
 <script src="<?= base_url()?>res/js/jslocal.js"></script>
 
-  <title></title>
+  <title></title> 
 </head> 
 <body>
 <header id="header" class="">
@@ -114,7 +114,8 @@
     data-sort-name="v6"
     data-sort-order="desc" 
     data-show-toggle="true" 
-    data-show-columns="true"                     
+    data-show-columns="true" 
+    data-toggle="table" data-pagination="true" data-click-to-select="true"                   
                                 >
             <thead>
             <tr>

@@ -19,7 +19,7 @@
 			$this->load->view('VProducto',$dat);
 		}
 		public function doreg(){
-
+ 
 			$respuesta = array();
 			$respuesta ['error']="";
 
@@ -31,13 +31,13 @@
         	$this->form_validation->set_message('is_natural_no_zero', '%s Debe contener numero natural');
         	$this->form_validation->set_message('is_natural', '%s Debe contener numero natural');
 
-			$this->form_validation->set_rules('idcategoriap', 'Ingresar id categoria', 'required|is_natural_no_zero');
+			$this->form_validation->set_rules('idcategoria', 'Ingresar id categoria', 'required|is_natural_no_zero');
 
-			$this->form_validation->set_rules('nombrep', 'Ingrese nombre de producto','callback_validarNombre',  'required|min_length[2]|max_length[120]|callback_validarNombre',array('validarNombre'=> 'El nombre ingresado es incorrecto.'));
+			$this->form_validation->set_rules('nombrep', 'Ingrese nombre de producto','required|min_length[2]|max_length[120]');
 
-			$this->form_validation->set_rules('precio', 'Ingrese precio de producto', 'required|callback_validarnumerodecimalpositivo',array('validarnumerodecimalpositivo'=> 'El valor ingresado es incorrecto.'));
+			$this->form_validation->set_rules('precio', 'Ingrese precio de producto', 'min_length[2]|max_length[120]|required|callback_validarnumerodecimalpositivo',array('validarnumerodecimalpositivo'=> 'El valor ingresado es incorrecto.'));
 
-			$this->form_validation->set_rules('cantidadp', 'Ingrese cantidad de producto', 'is_natural');
+			$this->form_validation->set_rules('cantidad', 'Ingrese cantidad de producto', 'is_natural|min_length[1]|max_length[4]');
 
 			if ($this->form_validation->run()==false) {
 

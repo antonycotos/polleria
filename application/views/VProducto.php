@@ -14,7 +14,7 @@
 
 <script src="<?= base_url()?>res/js/bootstrap-table.min.js"></script>
 
-<script src="<?= base_url()?>res/js/jslocal.js"></script>
+<script src="<?= base_url()?>res/js/jsproducto.js"></script>
 
   <title></title>
 </head> 
@@ -66,32 +66,45 @@
 
 
      <?= form_open('#', array('id' => 'frmreg','name' => 'frmreg')) ?>
+      <div class="form-group">    
+                      <label for="idcategoria">*Categoria:</label>
+                      <?php 
+                        echo form_dropdown('idcategoria', $categoria, '', 'class="form-control selectpicker" id="idcategoria" required '); ?>       
+                   </div> 
+
+    <div class ="col-md-12">
+      <label for = "nombrep">*Nombre</label>
+      <input type="text" class ="form-control" id= "nombrep" placeholder="Ingresar Nombre" required name="nombrep"> 
+    </div>
+
+    <div class ="col-md-12">
+      <label for = "precio">*Precio</label>
+      <input type="number" class ="form-control" id= "precio" placeholder="Ingresar Precio" required name="precio"> 
+    </div>
+
+    <div class ="col-md-12">
+      <label for = "cantidad">*Cantidad</label>
+      <input type="number" class ="form-control" id= "cantidad" placeholder="Ingresar Cantidad" required name="cantidad"> 
 
      <div class ="col-md-12">
-      <label for = "nombrel">*Nombre</label>
-      <input type="text" class ="form-control" id= "nombrel" placeholder="Ingresar Nombre" required name="nombrel"> 
+      <label for = "idcat">*Id Categoria</label>
+      <input type="number" class ="form-control" id= "idcat" placeholder="Ingresar categoria" required name="idcat"> 
+    </div>
+
+     <div class ="col-md-12">
+      <label for = "nompro">*Nombre del peoducto</label>
+      <input type="text" class ="form-control" id= "nompro" placeholder="Ingresar producto" required name="nompro"> 
     </div>
 
     <div class ="col-md-12">
-      <label for = "telefonol">*Telefono</label>
-      <input type="number" class ="form-control" id= "telefonol" placeholder="Ingresar Telefono" required name="telefonol"> 
+      <label for = "precio">*Precio del producto</label>
+      <input type="number" step="any" class ="form-control" id= "precio" placeholder="Ingresar precio" required name="precio"> 
     </div>
 
     <div class ="col-md-12">
-      <label for = "direccionl">*Direccion</label>
-      <input type="text" class ="form-control" id= "direccionl" placeholder="Ingresar Direccion" required name="direccionl"> 
+      <label for = "cantidadp">*Cantidad del producto</label>
+      <input type="number" class ="form-control" id= "cantidadp" placeholder="Ingresar cantidad" required name="cantidadp"> 
     </div>
-
-    <div class ="col-md-12">
-      <label for = "correoelectronicol">*Correo Eletronico</label>
-      <input type="email" class ="form-control" id= "correoelectronicol" placeholder="Ingresar Correo" required name="correoelectronicol"> 
-    </div>
-
-    <div class ="col-md-12">
-      <label for = "aforo">*Aforo</label>
-      <input type="number" class ="form-control" id= "aforo" placeholder="Ingresar Aforo" required name="aforo"> 
-    </div>
-
      <div class ="col-md-12">
       <label></label>
     </div>
@@ -118,11 +131,10 @@
                                 >
             <thead>
             <tr>
-          <th data-filed ="v2">Nombre</th>
-          <th data-filed ="v3">Telefono</th>
-          <th data-filed ="v4">Direccion</th>
-          <th data-filed ="v5">Correo Electronico</th>
-          <th data-filed ="v6">Aforo</th>
+                <th data-field="v2">Tipo de producto</th>
+                <th data-field="v3">Nombre</th>
+                <th data-field="v4">Precio</th>
+                <th data-field="v5">Cantidad</th>
             </tr>
             </thead>
         </table>

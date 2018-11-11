@@ -48,7 +48,7 @@ function doaccion() {
 $("#brMostrar").click(function() {
 
 	$.ajax({
-		url: ruta+'local/dolist',
+		url: ruta+'responsable/dolist',
 		type: 'POST',
 		dataType: 'json',
 		data: {},

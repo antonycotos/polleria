@@ -1,10 +1,10 @@
 function doaccion() {
 	$("#wok").hide();
 	$("#werror").hide();
-    document.getElementById('dnombre').style.display = 'none';
-    		document.getElementById('dapellidos').style.display = 'none';
-    		document.getElementById('druc').style.display = 'block';
-    		document.getElementById('drz').style.display = 'block';	
+    document.getElementById('nombresprov').style.display = 'none';
+    		document.getElementById('apellidoprov').style.display = 'none';
+    		document.getElementById('ruc').style.display = 'block';
+    		document.getElementById('razonsocial').style.display = 'block';	
 	$("#frmreg").submit(
 		function(){
 			$.ajax({
@@ -74,25 +74,27 @@ $("#brMostrar").click(function() {
 		console.log("complete");
 	});
 	
-});
-	$("#tipro").change(function() {
+}); 
+	$("#idtipoproveedorp").change(function() {
 		cambiar();
 	});
 	function cambiar(){
-		$tipo = $("#tipro").val();
+		$tipo = $("#idtipoproveedorp").val();
 		console.log($tipo);
-        if($tipo=='1'){			
-			document.getElementById('dnombre').style.display = 'none';
-    		document.getElementById('dapellidos').style.display = 'none';
-    		document.getElementById('druc').style.display = 'block';
-    		document.getElementById('drz').style.display = 'block';	
+        if($tipo=='1'){	
+        	
+			document.getElementById('nombresprov').style.display = 'none';
+    		document.getElementById('apellidoprov').style.display = 'none';
+    		document.getElementById('ruc').style.display = 'block';
+    		document.getElementById('razonsocial').style.display = 'block';	
 		}
 
-		if($tipo=='2'){			
-			document.getElementById('dnombre').style.display = 'block';
-    		document.getElementById('dapellidos').style.display = 'block';
-    		document.getElementById('druc').style.display = 'none';
-    		document.getElementById('drz').style.display = 'none';
+		if($tipo=='2'){	
+					
+			document.getElementById('nombresprov').style.display = 'block';
+    		document.getElementById('apellidoprov').style.display = 'block';
+    		document.getElementById('ruc').style.display = 'none';
+    		document.getElementById('razonsocial').style.display = 'none';
 		}
 };
 

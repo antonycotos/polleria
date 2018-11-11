@@ -5,7 +5,7 @@ function doaccion() {
 	$("#frmreg").submit(
 		function(){
 			$.ajax({
-				url: ruta+'local/doreg',
+				url: ruta+'producto/doreg',
 				type: 'POST', 
 				dataType: 'json',
 				data: $('#frmreg').serialize(),
@@ -53,31 +53,13 @@ $("#brMostrar").click(function() {
 		dataType: 'json',
 		data: {},
 		success:function(e){
-			/*if(e.datos.length>0){
+			if(e.datos.length>0){
 				alert(e.datos.length);
 				$('#table').bootstrapTable({
 
 					data: e.datos
 				});
-			}*/
-			if(e.datos.length>0)
-				{					
-					$(function(){
-						$("#table").bootstrapTable('destroy');
-						$("#table").show();
-						$('#table').bootstrapTable({
-							data: e.datos
-						});
-						if($(window).width() < 765){
-							$("#table").bootstrapTable('toggleView');
-						}
-					});
-				}
-				else
-				{
-					alert("Error de carga: No hay datos");					
-					$("#table").hide();
-				}
+			}
 		}
 	})
 	.done(function() {

@@ -38,9 +38,9 @@
 			//VALIDACIONES
 			$this ->form_validation->set_rules('idtipoproveedorp','Ingrese tipo de proveedor','required|is_natural_no_zero');
 
-			$this ->form_validation->set_rules('nombresprov','ingrese el nombre proveedor','required|min_length[2]|max_length[120]|callback_validarNombre',array('validarNombre' => 'Nombre no tiene caracteres validos'));
-
-			$this ->form_validation->set_rules('apellidoprov','ingrese el apellido proveedor','required|min_length[3]|max_length[120]|callback_validarNombre',array('validarNombre' => 'apellido no tiene caracteres validos'));
+			$this ->form_validation->set_rules('nombresprov','ingrese el nombre proveedor','min_length[2]|max_length[120]|callback_validarNombre',array('validarNombre' => 'Nombre no tiene caracteres validos'));
+ 
+			$this ->form_validation->set_rules('apellidoprov','ingrese el apellido proveedor','min_length[3]|max_length[120]|callback_validarNombre',array('validarNombre' => 'apellido no tiene caracteres validos'));
 
 			$this ->form_validation->set_rules('telefonoprov','ingrese el telefono proveedor','required|min_length[9]|max_length[13]|is_natural');
 
@@ -50,7 +50,7 @@
 			//CAMPO NO OBLIGATORIO
 			$this ->form_validation->set_rules('ruc','ingrese ruc','exact_length[11]|is_natural');
 
-			$this ->form_validation->set_rules('razonsocial','ingrese razon social','required|min_length[5]|max_length[100]|callback_validarNombre',array('validarNombre' => 'razon social no tiene caracteres validos'));
+			$this ->form_validation->set_rules('razonsocial','ingrese razon social','min_length[5]|max_length[100]|callback_validarNombre',array('validarNombre' => 'razon social no tiene caracteres validos'));
 
 			$this ->form_validation->set_rules('direccionprov','ingrese la direccion del proveedor','min_length[17]|max_length[150]|callback_validarNombre',array('validarNombre' => 'direccion de proveedor no tiene caracteres validos'));
 
@@ -63,20 +63,28 @@
                 else
                 {
                 	//acierto
-               $d=array($this->input->post("idtipoproveedorp"),$this->input->post("nombresprov"),$this->input->post("apellidoprov"),$this->input->post("telefonoprov"),$this->input->post("correoelectronicol"),$this->input->post("ruc"),$this->input->post("razonsocial"),$this->input->post("direccionprov"));
+                	$d;
+                	
+                	  $d=array($this->input->post("idtipoproveedorp"),
+               			$this->input->post("nombresprov"),
+               			$this->input->post("apellidoprov"),
+               			$this->input->post("telefonoprov"),
+               			$this->input->post("correoelectronicol"),
+               			$this->input->post("direccionprov"));
+                	
 
-                	$ejecuta =$this->MProveedor->registra($d);                	
+
+                	$ejecuta =$this->Mtrabajador->registra($d);
+
                 	if($ejecuta['respuesta'] ==1){
-              		  $respuesta['ok'] = $ejecuta['mensaje'];              
+                    $respuesta['ok'] = $ejecuta['mensaje'];              
             }
             else{
               $respuesta['error'] = $ejecuta['mensaje'];
             }
-                   
-                }
+            }
 			header('Content-Type: application/x-json; charset=utf-8');
                 echo(json_encode($respuesta));
-
 		}
 
 		function validarNombre($cadena){
@@ -92,6 +100,7 @@
   $matches = null;
   return (1 === preg_match('/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/', $str, $matches));
 }
-	}
+
+}
 
  ?>
