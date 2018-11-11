@@ -86,46 +86,11 @@
     <div class ="col-md-12">
       <label for = "cantidad">*Cantidad</label>
       <input type="number" class ="form-control" id= "cantidad" placeholder="Ingresar Cantidad" required name="cantidad"> 
+     </div>   
+    
+  
+   
 
-     <div class ="col-md-12">
-      <label for = "idcat">*Id Categoria</label>
-      <input type="number" class ="form-control" id= "idcat" placeholder="Ingresar categoria" required name="idcat"> 
-    </div>
-
-     <div class ="col-md-12">
-      <label for = "nompro">*Nombre del peoducto</label>
-      <input type="text" class ="form-control" id= "nompro" placeholder="Ingresar producto" required name="nompro"> 
-    </div>
-
-    <div class ="col-md-12">
-      <label for = "precio">*Precio del producto</label>
-      <input type="number" step="any" class ="form-control" id= "precio" placeholder="Ingresar precio" required name="precio"> 
-
-     <div class ="col-md-12">
-      <label for = "idcat">*Id Categoria</label>
-      <input type="number" class ="form-control" id= "idcat" placeholder="Ingresar categoria" required name="idcat"> 
-    </div>
-
-     <div class ="col-md-12">
-      <label for = "nompro">*Nombre del peoducto</label>
-      <input type="text" class ="form-control" id= "nompro" placeholder="Ingresar producto" required name="nompro"> 
-    </div>
-
-    <div class ="col-md-12">
-      <label for = "precio">*Precio del producto</label>
-      <input type="number" step="any" class ="form-control" id= "precio" placeholder="Ingresar precio" required name="precio"> 
-    </div>
-
-    <div class ="col-md-12">
-      <label for = "cantidadp">*Cantidad del producto</label>
-      <input type="number" class ="form-control" id= "cantidadp" placeholder="Ingresar cantidad" required name="cantidadp"> 
-
-    </div>
-
-    <div class ="col-md-12">
-      <label for = "cantidadp">*Cantidad del producto</label>
-      <input type="number" class ="form-control" id= "cantidadp" placeholder="Ingresar cantidad" required name="cantidadp"> 
-    </div>
      <div class ="col-md-12">
       <label></label>
     </div>
