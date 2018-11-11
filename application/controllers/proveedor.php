@@ -36,11 +36,23 @@
         	$this->form_validation->set_message('is_unique', '%s Debe ser campo unico');
 
 			//VALIDACIONES
+			$cant = $this->input->post("idtipoproveedorp");
+			if($cant==2){
+					$this ->form_validation->set_rules('norz','ingrese el nombre proveedor','required|min_length[2]|max_length[120]|callback_validarNombre',array('validarNombre' => 'Nombre no tiene caracteres validos'));
+ 
+			$this ->form_validation->set_rules('aoruc','ingrese el apellido proveedor','required|min_length[3]|max_length[120]|callback_validarNombre',array('validarNombre' => 'apellido no tiene caracteres validos'));
+			}
+			if($cant==1){
+						$this ->form_validation->set_rules('aoruc','ingrese ruc','required|exact_length[11]|is_natural');
+
+			$this ->form_validation->set_rules('norz','ingrese razon social','required|min_length[5]|max_length[100]|callback_validarNombre',array('validarNombre' => 'razon social no tiene caracteres validos'));
+			}
+			
+
+			
 			$this ->form_validation->set_rules('idtipoproveedorp','Ingrese tipo de proveedor','required|is_natural_no_zero');
 
-			$this ->form_validation->set_rules('nombresprov','ingrese el nombre proveedor','min_length[2]|max_length[120]|callback_validarNombre',array('validarNombre' => 'Nombre no tiene caracteres validos'));
- 
-			$this ->form_validation->set_rules('apellidoprov','ingrese el apellido proveedor','min_length[3]|max_length[120]|callback_validarNombre',array('validarNombre' => 'apellido no tiene caracteres validos'));
+		
 
 			$this ->form_validation->set_rules('telefonoprov','ingrese el telefono proveedor','required|min_length[9]|max_length[13]|is_natural');
 
@@ -48,11 +60,7 @@
 			$this ->form_validation->set_rules('correoelectronicol','ingrese correo electronico','min_length[15]|max_length[150]|callback_is_valid_email',array('is_valid_email'=> 'El correo ingresado es incorrecto.'));
 
 			//CAMPO NO OBLIGATORIO
-			$this ->form_validation->set_rules('ruc','ingrese ruc','exact_length[11]|is_natural');
-
-			$this ->form_validation->set_rules('razonsocial','ingrese razon social','min_length[5]|max_length[100]|callback_validarNombre',array('validarNombre' => 'razon social no tiene caracteres validos'));
-
-			$this ->form_validation->set_rules('direccionprov','ingrese la direccion del proveedor','min_length[17]|max_length[150]|callback_validarNombre',array('validarNombre' => 'direccion de proveedor no tiene caracteres validos'));
+			$this ->form_validation->set_rules('direccionprov','ingrese la direccion del proveedor','min_length[17]|max_length[150]');
 
 			if ($this->form_validation->run() == FALSE)
                 {
@@ -63,19 +71,13 @@
                 else
                 {
                 	//acierto
-                	$d;
-                	
                 	  $d=array($this->input->post("idtipoproveedorp"),
-               			$this->input->post("nombresprov"),
-               			$this->input->post("apellidoprov"),
+               			$this->input->post("norz"),
+               			$this->input->post("aoruc"),
                			$this->input->post("telefonoprov"),
                			$this->input->post("correoelectronicol"),
                			$this->input->post("direccionprov"));
-                	
-
-
-                	$ejecuta =$this->Mtrabajador->registra($d);
-
+                	$ejecuta =$this->MProveedor->registra($d);
                 	if($ejecuta['respuesta'] ==1){
                     $respuesta['ok'] = $ejecuta['mensaje'];              
             }

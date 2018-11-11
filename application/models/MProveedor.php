@@ -51,6 +51,7 @@ class MProveedor extends CI_Model {
 	$this->db->close();
 	$coll = $r->result_array();
 	$combo=array();
+	$combo[''] = 'Seleccionar';
 	foreach ($coll as $value) {
 		$combo [$value['v1']]=$value['v2'];
 	}

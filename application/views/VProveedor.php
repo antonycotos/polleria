@@ -24,7 +24,7 @@ $(document).ready(function(){
 });
 </script>
 <div class="container">
-
+ 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-3">Registrar Proveedor</h1>
@@ -62,17 +62,17 @@ $(document).ready(function(){
                    </div> 
       </div>  
 
-    <div class ="col-md-12" id="nombresprov">
-      <label for = "nombresprov">*Nombre del proveedor</label>
-      <input type="text" class ="form-control" id= "nombresprov" placeholder="Ingresar Nombre" required name="nombresprov"> 
+    <div class ="col-md-12" id=norz"">
+      <label id="lnorz" for = "norz">*Nombre del proveedor</label>
+      <input type="text" class ="form-control" id= "norz"  required name="norz"> 
     </div>
  
-    <div class ="col-md-12" id="apellidoprov">
-      <label for = "apellidoprov">*Apellidos del proveedor</label>
-      <input type="text" class ="form-control" id= "apellidoprov" placeholder="Ingresar Apellido" required name="apellidoprov"> 
+    <div class ="col-md-12" id="aoruc">
+      <label id="laoruc" for = "aoruc">*Apellidos del proveedor</label>
+      <input type="text" class ="form-control" id= "aoruc"  required name="aoruc"> 
     </div>
 
-    <div class ="col-md-12" id="ruc">
+   <!-- <div class ="col-md-12" id="ruc">
       <label for = "ruc" id="lruc">*Ruc</label>
       <input type="number" class ="form-control" id= "ruc" placeholder="Ingresar Ruc" required name="ruc"> 
     </div>
@@ -80,7 +80,7 @@ $(document).ready(function(){
     <div class ="col-md-12" id="razonsocial">
       <label for = "razonsocial" id="lrz">*Razonsocial</label>
       <input type="text" class ="form-control" id= "razonsocial" placeholder="Ingresar Nombre" required name="razonsocial"> 
-    </div>
+    </div>-->
 
     <div class ="col-md-12">
       <label for = "telefonoprov">*Telefono</label>
@@ -91,8 +91,6 @@ $(document).ready(function(){
       <label for = "correoelectronicol">*Correo Eletronico</label>
       <input type="email" class ="form-control" id= "correoelectronicol" placeholder="Ingresar Correo" required name="correoelectronicol"> 
     </div>
-
-     
 
     <div class ="col-md-12">
       <label for = "direccionprov">*Direccion</label>

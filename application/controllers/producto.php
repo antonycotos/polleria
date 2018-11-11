@@ -35,9 +35,9 @@
 
 			$this->form_validation->set_rules('nombrep', 'Ingrese nombre de producto','required|min_length[2]|max_length[120]');
 
-			$this->form_validation->set_rules('precio', 'Ingrese precio de producto', 'min_length[2]|max_length[120]|required|callback_validarnumerodecimalpositivo',array('validarnumerodecimalpositivo'=> 'El valor ingresado es incorrecto.'));
+			$this->form_validation->set_rules('precio', 'Ingrese precio de producto', 'min_length[1]|max_length[6]|required|callback_validarnumerodecimalpositivo',array('validarnumerodecimalpositivo'=> 'El precio ingresado es incorrecto.'));
 
-			$this->form_validation->set_rules('cantidad', 'Ingrese cantidad de producto', 'is_natural|min_length[1]|max_length[4]');
+			$this->form_validation->set_rules('cantidad', 'Ingrese cantidad de producto', 'is_natural|min_length[1]|max_length[4]|callback_evluarcantidad',array('evluarcantidad' =>'LA CANTIDAD DEBE SER SOLO DIGITOS POSITIVOS'));
 
 			if ($this->form_validation->run()==false) {
 
@@ -46,9 +46,40 @@
 			}
 			else
 			{
-				$respuesta['ok']="Validacion Correcta";
+                	//acierto
+				 $cant = $this->input->post("cantidad");
 
+				 if($cant!=null or strlen($cant)>0){
+				 	$d=array($this->input->post("idcategoria"),
+               			$this->input->post("nombrep"),
+               			$this->input->post("precio"),
+               			$this->input->post("cantidad"));
 
+                   		$ejecuta =$this->MProducto->registra($d,1);
+
+	                	if($ejecuta['respuesta'] ==1){
+	                    $respuesta['ok'] = $ejecuta['mensaje'];              
+	           			}
+			            else{
+			              $respuesta['error'] = $ejecuta['mensaje'];
+			            }
+				}
+
+				else{
+					$d=array($this->input->post("idcategoria"),
+               			$this->input->post("nombrep"),
+               			$this->input->post("precio"),
+               			$this->input->post("cantidad"));
+
+                   	$ejecuta =$this->MProducto->registra($d,0);
+
+                	if($ejecuta['respuesta'] ==1){
+                    $respuesta['ok'] = $ejecuta['mensaje'];              
+           			}
+		            else{
+		              $respuesta['error'] = $ejecuta['mensaje'];
+		            }	
+				}
 			}
 			header('Content-Type: application/x-json; charset=utf-8');
                 echo(json_encode($respuesta));
@@ -63,7 +94,7 @@
       return false;
   }
 
-   public function validarnumerodecimalpositivo($val)
+   public function validarnumerodecimalpositivo2($val)
     {
     	if(is_numeric($val)){
     		if($val>0){
@@ -76,10 +107,34 @@
     	else{
     		return false;	
     	}	
+    }
+    function validarnumerodecimalpositivo($num) { 
+    if (preg_match("/^[01.]*$/",$num)){ 
+        return true; 
+    } else { 
+        return false; 
+    } 
+}  
+    public function evluarcantidad($val)
+    {
+    	if(strlen($val)>0){
+	    	if(is_numeric($val)){
+	    		if($val>0){
+	    			return true;
+	    		}
+	    		if($val<=0){
+	    			return false;
+	    		}
+	    	}
+	    	else{
+    		return false;	
+    	}	
+	    }	
+    	else{
+    		return true;	
+    	}	
     } 
     
-
 	}
-
 
 ?>

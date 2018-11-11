@@ -63,15 +63,12 @@
 <div class="alert alert-danger" role="alert" id="werror">
   <p id="merror"></p>
 </div>
-
-
      <?= form_open('#', array('id' => 'frmreg','name' => 'frmreg')) ?>
       <div class="form-group">    
                       <label for="idcategoria">*Categoria:</label>
                       <?php 
                         echo form_dropdown('idcategoria', $categoria, '', 'class="form-control selectpicker" id="idcategoria" required '); ?>       
                    </div> 
-
 
     <div class ="col-md-12">
       <label for = "nombrep">*Nombre</label>
@@ -80,15 +77,13 @@
 
     <div class ="col-md-12">
       <label for = "precio">*Precio</label>
-      <input type="number" class ="form-control" id= "precio" placeholder="Ingresar Precio" required name="precio"> 
+      <input type="number" step="0.1" class ="form-control" id= "precio" placeholder="Ingresar Precio" required name="precio"> 
     </div>
 
     <div class ="col-md-12">
       <label for = "cantidad">*Cantidad</label>
-      <input type="number" class ="form-control" id= "cantidad" placeholder="Ingresar Cantidad" required name="cantidad"> 
-     </div>   
-    
-  
+      <input type="number"  class ="form-control" id= "cantidad" placeholder="Ingresar Cantidad"  name="cantidad"> 
+     </div>       
    
 
      <div class ="col-md-12">

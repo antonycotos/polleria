@@ -1,10 +1,11 @@
 function doaccion() {
 	$("#wok").hide();
 	$("#werror").hide();
-    document.getElementById('nombresprov').style.display = 'none';
-    		document.getElementById('apellidoprov').style.display = 'none';
-    		document.getElementById('ruc').style.display = 'block';
-    		document.getElementById('razonsocial').style.display = 'block';	
+    document.getElementById('norz').style.display = 'none';
+    document.getElementById('aoruc').style.display = 'none';
+    document.getElementById('lnorz').style.display = 'none';
+    document.getElementById('laoruc').style.display = 'none';
+
 	$("#frmreg").submit(
 		function(){
 			$.ajax({
@@ -82,19 +83,38 @@ $("#brMostrar").click(function() {
 		$tipo = $("#idtipoproveedorp").val();
 		console.log($tipo);
         if($tipo=='1'){	
-        	
-			document.getElementById('nombresprov').style.display = 'none';
-    		document.getElementById('apellidoprov').style.display = 'none';
+        	document.getElementById('norz').style.display = 'block';
+    		document.getElementById('aoruc').style.display = 'block';
+    		document.getElementById('lnorz').style.display = 'block';
+    		document.getElementById('laoruc').style.display = 'block';
+
+        	document.getElementById('lnorz').innerText ="Razon Social";
+			document.getElementById('laoruc').innerText= "RUC";
+			$('#aoruc').attr('placeholder','Ingrese Ruc');
+			$('#norz').attr('placeholder','Ingrese Razon Social');
+			
+    		/*document.getElementById('apellidoprov').style.display = 'none';
     		document.getElementById('ruc').style.display = 'block';
-    		document.getElementById('razonsocial').style.display = 'block';	
+    		document.getElementById('razonsocial').style.display = 'block';	*/
+		}
+		if($tipo=='2'){	
+			document.getElementById('norz').style.display = 'block';
+    		document.getElementById('aoruc').style.display = 'block';
+    		document.getElementById('lnorz').style.display = 'block';
+    		document.getElementById('laoruc').style.display = 'block';
+    		$('#aoruc').attr('placeholder','Ingrese Apellidos');
+    		document.getElementById('lnorz').innerText ="Nombre del Proveedor";
+			document.getElementById('laoruc').innerText= "Apellido del Proveedor";
+			$('#norz').attr('placeholder','Ingrese Nombres');
+			
 		}
 
-		if($tipo=='2'){	
-					
-			document.getElementById('nombresprov').style.display = 'block';
-    		document.getElementById('apellidoprov').style.display = 'block';
-    		document.getElementById('ruc').style.display = 'none';
-    		document.getElementById('razonsocial').style.display = 'none';
+		else if($tipo!='2' & $tipo!='1' ){
+			document.getElementById('norz').style.display = 'none';
+		    document.getElementById('aoruc').style.display = 'none';
+		    document.getElementById('lnorz').style.display = 'none';
+		    document.getElementById('laoruc').style.display = 'none';
+
 		}
 };
 

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MProducto extends CI_Model {
 
 	public function __construct()
-	{
+	{ 
 		parent::__construct();
 		//Do your magic here
 	}
@@ -20,18 +20,31 @@ class MProducto extends CI_Model {
  
 	}
 
-	public function registra($data)
+	public function registra($data,$opcion)
 	{
 		$res;
-		$this->load->database();
-		$this->db->trans_start();
-		$consulta="call sp_registrarproducto(?,?,?,?,@v_res,@v_mensaje)";
-		$this->db->query($consulta,$data);		
-		$res=$this->db->query("select @v_res as respuesta, @v_mensaje as mensaje");
-		$datos = ['respuesta' => $res->row()->respuesta, 'mensaje' => $res->row()->mensaje];
-		$this->db->trans_complete();
-		$this->db->close();
+		if($opcion==0){
+			$this->load->database();
+			$this->db->trans_start();
+			$consulta="call sp_registrarproducto(?,?,?,?,@v_res,@v_mensaje)";
+			$this->db->query($consulta,$data);		
+			$res=$this->db->query("select @v_res as respuesta, @v_mensaje as mensaje");
+			$datos = ['respuesta' => $res->row()->respuesta, 'mensaje' => $res->row()->mensaje];
+			$this->db->trans_complete();
+			$this->db->close();
+		}
+		else{
+			$this->load->database();
+			$this->db->trans_start();
+			$consulta="call sp_registrarproducto(?,?,?,?,@v_res,@v_mensaje)";
+			$this->db->query($consulta,$data);		
+			$res=$this->db->query("select @v_res as respuesta, @v_mensaje as mensaje");
+			$datos = ['respuesta' => $res->row()->respuesta, 'mensaje' => $res->row()->mensaje];
+			$this->db->trans_complete();
+			$this->db->close();	
+		}
 		return  $datos;
+
 
 	}
 
@@ -54,6 +67,7 @@ class MProducto extends CI_Model {
 	$this->db->close();
 	$coll = $r->result_array();
 	$combo=array();
+	$combo[''] = 'Seleccionar';
 	foreach ($coll as $value) {
 		$combo [$value['v1']]=$value['v2'];
 	}
