@@ -12,10 +12,11 @@
 			$this->load->helper('url');
 			$this->load->helper('form');
 			$this->load->library('form_validation');
+			$this->load->model("MCategoria");
 			
 		}
 		public function index(){
-			$this->load->view('VistaCategoria');
+			$this->load->view('VCategoria');
 		}
 		public function doreg(){
 			$respuesta = array();
@@ -30,22 +31,20 @@
 
 			$this->form_validation->set_rules('descripcionc', 'descripcion de categoria', 'required|min_length[10]|max_length[200]');
 
-			if ($this->form_validation->run()==false) {
-
-				//error
-				$respuesta['error']=validation_errors();
-			}
-			else
-			{
-				$respuesta['ok']="Validacion Correcta";
-
-
-			}
-			header('Content-Type: application/x-json; charset=utf-8');
-                echo(json_encode($respuesta));
-
-
-		}
+			if ($this->form_validation->run() == FALSE)
+                {
+                	//error
+                   $respuesta['error'] = validation_errors();
+     
+                }
+                else
+                {
+                	//acierto
+                   $respuesta['ok'] ="Validacion Correcta";
+                }
+         header('Content-Type: application/x-json; charset=utf-8');
+        echo(json_encode($respuesta));                                 
+	}
 		function validarNombre($cadena){
       
       $pattern = "/^[A-Za-z][A-Za-zñÑáéíóúÁÉÍÓÚÄËÏÖÜäëïöüàèìòùÀÈÌÔÙ, ]{2,}$/";
