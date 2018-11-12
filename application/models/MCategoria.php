@@ -8,15 +8,18 @@ class MCategoria extends CI_Model {
 		parent::__construct();
 		//Do your magic here
 	}
-	public function registrar($d)
+	public function registra($data)
 	{
-		$this->load->database();  
+		$res;
+		$this->load->database();
 		$this->db->trans_start();
-		$this->db->query("call sp_registrarcategoria(?,?,@s)",$d);
-		$r=$this->db->query("select @s as v");
+		$consulta="call sp_registrarcategoria(?,?,@v_res,@v_mensaje)";
+		$this->db->query($consulta,$data);		
+		$res=$this->db->query("select @v_res as respuesta, @v_mensaje as mensaje");
+		$datos = ['respuesta' => $res->row()->respuesta, 'mensaje' => $res->row()->mensaje];
 		$this->db->trans_complete();
-		$this->db->close();	
-		return $r->row()->v;
+		$this->db->close();
+		return  $datos;
 
 	}
 

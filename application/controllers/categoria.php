@@ -40,7 +40,19 @@
                 else
                 {
                 	//acierto
-                   $respuesta['ok'] ="Validacion Correcta";
+               $d=array($this->input->post("nombrec"),
+               	$this->input->post("descripcionc"));
+
+                  $ejecuta =$this->MCategoria->registra($d);
+
+                	if($ejecuta['respuesta'] ==1){
+                    $respuesta['ok'] = $ejecuta['mensaje'];              
+            }
+            else{
+              $respuesta['error'] = $ejecuta['mensaje'];
+            }
+
+
                 }
          header('Content-Type: application/x-json; charset=utf-8');
         echo(json_encode($respuesta));                                 

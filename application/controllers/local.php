@@ -37,7 +37,7 @@
 			$this ->form_validation->set_rules('direccionl','ingrese la direccion','required|min_length[7]|max_length[150]');
 
 			//CAMPO NO OBLIGATORIO
-			$this ->form_validation->set_rules('correoelectronicol','ingrese correo electronico','min_length[15]|max_length[150]');
+			$this ->form_validation->set_rules('correoelectronicol','ingrese correo electronico','min_length[15]|max_length[150]|callback_is_valid_email',array('is_valid_email'=> 'El correo ingresado es incorrecto.'));
 
 			//CAMPO NO OBLIGATORIO
 			$this ->form_validation->set_rules('aforo','capacidad a foro','min_length[2]|max_length[3]|is_natural|callback_validaforo',array('validaforo' => 'Aforo tiene que ser mayor a 20 y menor a 999'));
@@ -100,6 +100,12 @@
       }
       return true;
     }
+
+    function is_valid_email($str)
+{
+  $matches = null;
+  return (1 === preg_match('/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/', $str, $matches));
+}
 	}
  
 
