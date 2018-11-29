@@ -19,7 +19,7 @@
 			parent::__construct();
 			$this->load->helper('url');
 			$this->load->helper('form');
-			$this->load->library('form_validation');
+			$this->load->library('form_validation'); 
 			$this->load->model("Mtrabajador");
 
 		}
@@ -49,7 +49,7 @@
 
 			$this ->form_validation->set_rules('direcciont', 'Direccion de trabajador','required|min_length[7]|max_length[150]');
 
-			$this ->form_validation->set_rules('correoelectronicot', 'Correo electronico de trabajador','required|min_length[15]|max_length[150]|callback_is_valid_email',array('is_valid_email'=> 'El correo ingresado es incorrecto.'));
+			$this ->form_validation->set_rules('correoelectronicot', 'Correo electronico de trabajador','min_length[15]|max_length[150]|callback_is_valid_email',array('is_valid_email'=> 'El correo ingresado es incorrecto.'));
 
 			$this ->form_validation->set_rules('fechanacimientot', 'Fecha nacimiento de trabajador','callback_valid_date',array('valid_date' => 'fecha no tiene caracteres validos'));
 

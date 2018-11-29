@@ -59,8 +59,7 @@ class MProducto extends CI_Model {
 
 	}
 	
-				public function combocategoria()
-{
+    public function combocategoria(){
 	$this->load->database();
 	$consulta="call sp_lcategoria()";
 	$r=$this->db->query($consulta);
@@ -72,7 +71,28 @@ class MProducto extends CI_Model {
 		$combo [$value['v1']]=$value['v2'];
 	}
 	return $combo;
-}
+	}
+
+	public function combocategoria2(){
+	$this->load->database();
+	$consulta="call sp_lcategoria()";
+	$r=$this->db->query($consulta);
+	$this->db->close();
+	$coll = $r->result_array();
+	$combo=array();
+	foreach ($coll as $value) {
+		$combo [$value['v1']]=$value['v2'];
+	}
+	return $combo;
+	}
+	public function listabusquedaproductos($categoria,$buscar){
+        $this->load->database();
+        $consulta="call sp_lproductoxcat('$categoria','$buscar')";
+        $r=$this->db->query($consulta);
+        $this->db->close();
+        return $r->result_array();
+    }
+
 
 }
 

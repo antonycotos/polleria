@@ -110,7 +110,7 @@
 
     <div class ="col-md-12">
       <label for = "correoelectronicot">*Correo Eletronico</label>
-      <input type="email" class ="form-control" id= "correoelectronicot" placeholder="Ingresar Correo" required name="correoelectronicot"> 
+      <input type="email" class ="form-control" id= "correoelectronicot" placeholder="Ingresar Correo"  name="correoelectronicot"> 
     </div>
 
     <div class ="col-md-12">

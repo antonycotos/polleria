@@ -11,7 +11,7 @@
 			$this->load->helper('url');
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			$this->load->model("MProducto");
+			$this->load->model("MProducto"); 
 		 
 		}
 		public function index(){
@@ -35,7 +35,7 @@
 
 			$this->form_validation->set_rules('nombrep', 'Ingrese nombre de producto','required|min_length[2]|max_length[120]');
 
-			$this->form_validation->set_rules('precio', 'Ingrese precio de producto', 'min_length[1]|max_length[6]|required|callback_validarnumerodecimalpositivo',array('validarnumerodecimalpositivo'=> 'El precio ingresado es incorrecto.'));
+			$this->form_validation->set_rules('precio', 'Ingrese precio de producto', 'min_length[1]|max_length[6]|required|callback_validarnumerodecimalpositivo2',array('validarnumerodecimalpositivo2'=> 'El precio ingresado es incorrecto.'));
 
 			$this->form_validation->set_rules('cantidad', 'Ingrese cantidad de producto', 'is_natural|min_length[1]|max_length[4]|callback_evluarcantidad',array('evluarcantidad' =>'LA CANTIDAD DEBE SER SOLO DIGITOS POSITIVOS'));
 
